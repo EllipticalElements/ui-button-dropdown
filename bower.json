@@ -1,7 +1,7 @@
 {
   "name": "ui-button-dropdown",
   "description": "button dropdown web component",
-  "version":"1.0.0",
+  "version":"1.0.1",
   "main": "",
   "authors": [
     "S. Francis"
