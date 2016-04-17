@@ -1,18 +1,35 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../elliptical-polymer-behaviors/component-behavior.html">
 <link rel="import" href="../ui-behaviors/dropdown.html">
 
-
 <script>
-Elliptical(function(){
-    $.element('ui-button-dropdown',[Elliptical.Behaviors.Dropdown],{
-        options: {
-            mode:'dropdown',
-            handleEvents:false,
-            proxyUpgrade: true,
-            hideOnBlur:true,
-            autoClose:false
+
+    Polymer({
+
+        is: 'ui-button-dropdown',
+
+        behaviors:[Elliptical.ComponentBehavior,Elliptical.Behaviors.Dropdown],
+
+        properties: {
+            mode:{
+                type:String,
+                value:'dropdown'
+            },
+            handleEvents:{
+                type:Boolean,
+                value:false
+            },
+            hideOnBlur:{
+                type:Boolean,
+                value:true
+            },
+            autoClose:{
+                type:Boolean,
+                value:false
+            }
         },
 
-        _initElement: function(){
+        ready:function(){
             var dropdown = this.element.find('ui-dropdown');
             if(!dropdown[0]){
                 dropdown=this.element.find('ui-mega-dropdown');
@@ -26,7 +43,6 @@ Elliptical(function(){
             this.__events();
         }
 
-
     });
-});
+
 </script>
